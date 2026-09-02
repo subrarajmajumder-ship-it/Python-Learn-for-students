@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PythonLearn 🐍</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     HOME PAGE
+     ========================= -->
+
+<div class="hero">
+
+    <h1>🐍 PythonLearn</h1>
+
+    <p class="tagline">
+        Learn Python from Zero to Coding 🚀
+    </p>
+
+    <p>
+        Learn Python step-by-step with simple lessons,
+        examples and interactive quizzes.
+    </p>
+
+    <button id="startButton">
+        Start Learning 🚀
+    </button>
+
+    <p id="message"></p>
+
+</div>
+
+
+<!-- =========================
+     PROGRESS
+     ========================= -->
+
+<div class="progress-box">
+
+    <h2>📊 Your Progress</h2>
+
+    <p id="progressText">
+        0 / 5 Lessons Completed
+    </p>
+
+    <p id="completionMessage"></p>
+
+    <div class="progress-bar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LESSON CARDS
+     ========================= -->
+
+<h2>📚 Python Lessons</h2>
+
+<div class="lessons">
+
+
+    <!-- LESSON 1 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 1: Python Introduction 🐍</h3>
+
+        <p>
+            Learn what Python is and why it is popular.
+        </p>
+
+        <button onclick="openLesson1()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+    <!-- LESSON 2 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 2: Variables 📦</h3>
+
+        <p>
+            Learn how to store information in Python.
+        </p>
+
+        <button onclick="openLesson2()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+    <!-- LESSON 3 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 3: Input & Output ⌨️</h3>
+
+        <p>
+            Learn how to take input and display output.
+        </p>
+
+        <button onclick="openLesson3()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+    <!-- LESSON 4 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 4: If-Else 🔀</h3>
+
+        <p>
+            Learn how to make decisions in Python.
+        </p>
+
+        <button onclick="openLesson4()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+    <!-- LESSON 5 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 5: Loops 🔁</h3>
+
+        <p>
+            Learn how to repeat code in Python.
+        </p>
+
+        <button onclick="openLesson5()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+    <!-- LESSON 6 -->
+
+    <div class="lesson">
+
+        <h3>Lesson 6: Lists 📋</h3>
+
+        <p>
+            Learn how to store multiple values
+            in a Python list.
+        </p>
+
+        <button onclick="openLesson6()">
+            Learn Now
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     LESSON 1 PAGE
+     ========================= -->
+
+<div id="lesson1" class="lesson-page">
+
+    <h2>🐍 Lesson 1: Python Introduction</h2>
+
+    <p>
+        Python is a programming language that is easy
+        to learn and widely used.
+    </p>
+
+    <h3>💻 Your First Python Code</h3>
+
+    <pre>
+print("Hello, Python!")
+    </pre>
+
+    <p>Output:</p>
+
+    <pre>
+Hello, Python!
+    </pre>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        What is Python?
+    </p>
+
+    <button onclick="checkAnswer('A')">
+        A. A programming language
+    </button>
+
+    <button onclick="checkAnswer('B')">
+        B. A web browser
+    </button>
+
+    <button onclick="checkAnswer('C')">
+        C. An operating system
+    </button>
+
+    <p id="quizResult"></p>
+
+    <button onclick="closeLesson1()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     LESSON 2 PAGE
+     ========================= -->
+
+<div id="lesson2" class="lesson-page">
+
+    <h2>📦 Lesson 2: Variables</h2>
+
+    <p>
+        A variable is used to store information in Python.
+    </p>
+
+    <h3>💡 What is a Variable?</h3>
+
+    <p>
+        Think of a variable like a box that stores a value.
+    </p>
+
+    <h3>💻 Example</h3>
+
+    <pre>
+name = "Subraraj"
+age = 16
+
+print(name)
+print(age)
+    </pre>
+
+    <p>Output:</p>
+
+    <pre>
+Subraraj
+16
+    </pre>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        Which symbol is used to assign a value?
+    </p>
+
+    <button onclick="checkVariableAnswer('A')">
+        A. =
+    </button>
+
+    <button onclick="checkVariableAnswer('B')">
+        B. +
+    </button>
+
+    <button onclick="checkVariableAnswer('C')">
+        C. *
+    </button>
+
+    <p id="variableQuizResult"></p>
+
+    <button onclick="closeLesson2()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     LESSON 3 PAGE
+     ========================= -->
+
+<div id="lesson3" class="lesson-page">
+
+    <h2>⌨️ Lesson 3: Input & Output</h2>
+
+    <p>
+        In Python, input() is used to take information
+        from the user and print() is used to display output.
+    </p>
+
+    <h3>💡 What is Input?</h3>
+
+    <p>
+        Input means taking information from the user.
+    </p>
+
+    <h3>💻 Example</h3>
+
+    <pre>
+name = input("Enter your name: ")
+print("Hello", name)
+    </pre>
+
+    <p>Example Output:</p>
+
+    <pre>
+Enter your name: Subraraj
+Hello Subraraj
+    </pre>
+
+    <h3>🎮 Try It Yourself</h3>
+
+    <p>
+        Enter your name:
+    </p>
+
+    <input type="text"
+           id="nameInput"
+           placeholder="Your name">
+
+    <button onclick="showName()">
+        Run Code ▶️
+    </button>
+
+    <p id="nameOutput"></p>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        Which function is used to take input in Python?
+    </p>
+
+    <button onclick="checkInputAnswer('A')">
+        A. print()
+    </button>
+
+    <button onclick="checkInputAnswer('B')">
+        B. input()
+    </button>
+
+    <button onclick="checkInputAnswer('C')">
+        C. scan()
+    </button>
+
+    <p id="inputQuizResult"></p>
+
+    <button onclick="closeLesson3()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     LESSON 4 PAGE
+     ========================= -->
+
+<div id="lesson4" class="lesson-page">
+
+    <h2>🔀 Lesson 4: If-Else</h2>
+
+    <p>
+        If-Else is used to make decisions in Python.
+    </p>
+
+    <h3>💡 How does If-Else work?</h3>
+
+    <p>
+        If a condition is true, Python runs one block
+        of code. Otherwise, it runs the else block.
+    </p>
+
+    <h3>💻 Example</h3>
+
+    <pre>
+age = 18
+
+if age >= 18:
+    print("You can vote")
+else:
+    print("You cannot vote yet")
+    </pre>
+
+    <h3>🎮 Try It Yourself</h3>
+
+    <p>
+        Enter your age:
+    </p>
+
+    <input type="number"
+           id="ageInput"
+           placeholder="Enter age">
+
+    <button onclick="checkAge()">
+        Check Age 🔍
+    </button>
+
+    <p id="ageOutput"></p>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        Which keyword is used when the condition is false?
+    </p>
+
+    <button onclick="checkIfAnswer('A')">
+        A. if
+    </button>
+
+    <button onclick="checkIfAnswer('B')">
+        B. else
+    </button>
+
+    <button onclick="checkIfAnswer('C')">
+        C. print
+    </button>
+
+    <p id="ifQuizResult"></p>
+
+    <button onclick="closeLesson4()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     LESSON 5 PAGE
+     ========================= -->
+
+<div id="lesson5" class="lesson-page">
+
+    <h2>🔁 Lesson 5: Loops</h2>
+
+    <p>
+        A loop is used to repeat a block of code
+        multiple times.
+    </p>
+
+    <h3>💡 For Loop</h3>
+
+    <p>
+        A for loop repeats code for a specific number
+        of times.
+    </p>
+
+    <h3>💻 Example</h3>
+
+    <pre>
+for i in range(5):
+    print("Hello Python!")
+    </pre>
+
+    <p>Output:</p>
+
+    <pre>
+Hello Python!
+Hello Python!
+Hello Python!
+Hello Python!
+Hello Python!
+    </pre>
+
+    <h3>🎮 Try It Yourself</h3>
+
+    <p>
+        Enter a number:
+    </p>
+
+    <input type="number"
+           id="loopInput"
+           placeholder="Enter a number">
+
+    <button onclick="runLoop()">
+        Run Loop ▶️
+    </button>
+
+    <pre id="loopOutput"></pre>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        Which keyword is used to create a for loop?
+    </p>
+
+    <button onclick="checkLoopAnswer('A')">
+        A. repeat
+    </button>
+
+    <button onclick="checkLoopAnswer('B')">
+        B. for
+    </button>
+
+    <button onclick="checkLoopAnswer('C')">
+        C. loop
+    </button>
+
+    <p id="loopQuizResult"></p>
+
+    <button onclick="closeLesson5()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     LESSON 6 PAGE
+     ========================= -->
+
+<div id="lesson6" class="lesson-page">
+
+    <h2>📋 Lesson 6: Lists</h2>
+
+    <p>
+        A list is used to store multiple values in Python.
+    </p>
+
+    <h3>💡 What is a List?</h3>
+
+    <p>
+        A list can store multiple items in one variable.
+    </p>
+
+    <h3>💻 Example</h3>
+
+    <pre>
+fruits = ["Apple", "Banana", "Mango"]
+
+print(fruits)
+    </pre>
+
+    <p>Output:</p>
+
+    <pre>
+['Apple', 'Banana', 'Mango']
+    </pre>
+
+    <h3>➕ Adding an Item</h3>
+
+    <pre>
+fruits = ["Apple", "Banana"]
+
+fruits.append("Mango")
+
+print(fruits)
+    </pre>
+
+    <p>Output:</p>
+
+    <pre>
+['Apple', 'Banana', 'Mango']
+    </pre>
+
+    <h3>🎮 Try It Yourself</h3>
+
+    <p>
+        Enter a fruit name:
+    </p>
+
+    <input type="text"
+           id="fruitInput"
+           placeholder="Enter a fruit">
+
+    <button onclick="addFruit()">
+        Add Fruit ➕
+    </button>
+
+    <p id="fruitOutput"></p>
+
+    <h3>🧠 Quick Quiz</h3>
+
+    <p>
+        Which method is used to add an item to a list?
+    </p>
+
+    <button onclick="checkListAnswer('A')">
+        A. add()
+    </button>
+
+    <button onclick="checkListAnswer('B')">
+        B. append()
+    </button>
+
+    <button onclick="checkListAnswer('C')">
+        C. insertItem()
+    </button>
+
+    <p id="listQuizResult"></p>
+
+    <button onclick="closeLesson6()">
+        ⬅ Back to Lessons
+    </button>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
