@@ -23,13 +23,13 @@ function updateProgress() {
 
     if (progressText) {
         progressText.textContent =
-            completedLessons + " / 5 Lessons Completed";
+            completedLessons + " / 6 Lessons Completed";
     }
 
     if (progressFill) {
 
         const percentage =
-            (completedLessons / 5) * 100;
+            (completedLessons / 6) * 100;
 
         progressFill.style.width =
             percentage + "%";
@@ -37,7 +37,7 @@ function updateProgress() {
 
     if (completionMessage) {
 
-        if (completedLessons === 5) {
+        if (completedLessons === 6) {
 
             completionMessage.textContent =
                 "🎉 Course Completed!";
@@ -438,6 +438,8 @@ function openLesson6() {
 
 function closeLesson6() {
 
+    completeLesson(6);
+
     document.querySelector("#lesson6").style.display =
         "none";
 
@@ -483,3 +485,10 @@ function checkListAnswer(answer) {
             "❌ Wrong answer! Try again. 🐍";
     }
 }
+
+
+// ===============================
+// INITIALIZE PROGRESS
+// ===============================
+
+updateProgress();
