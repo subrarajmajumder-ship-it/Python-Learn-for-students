@@ -1,7 +1,7 @@
 {
   "name": "PythonLearn",
   "short_name": "PythonLearn",
-  "description": "PythonLearn - Learn Python from Zero to Coding.",
+  "description": "Learn Python from Zero to Coding with lessons, quizzes, practice and projects.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
