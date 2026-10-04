@@ -1,5 +1,5 @@
 /* =====================================================
-   PythonLearn 3.3
+   PythonLearn 3.4
    COMPLETE SCRIPT.JS
    ===================================================== */
 
@@ -12,44 +12,29 @@ const lessons = [
 
   {
     title: "Python Basics",
-    desc: "Learn Python and write your first program.",
-
+    desc: "Learn what Python is and write your first program.",
     content: `
       <h3>🐍 What is Python?</h3>
-
       <p>
-        Python is a beginner-friendly programming language.
-        You can use it to create websites, apps, automation,
-        games and many other projects.
+        Python is a beginner-friendly programming language used
+        for websites, automation, data science, AI and many other projects.
       </p>
 
-      <h3>Your First Python Program</h3>
-
+      <h3>Your First Program</h3>
       <pre><code>print("Hello, Python!")</code></pre>
 
       <p>
-        The <b>print()</b> function displays something on the screen.
+        The <b>print()</b> function displays information on the screen.
       </p>
-
-      <ul>
-        <li>Python is easy to read.</li>
-        <li>Python uses indentation.</li>
-        <li>Text is written inside quotes.</li>
-      </ul>
     `
   },
 
-
   {
     title: "Variables & Data Types",
-    desc: "Learn how Python stores different types of data.",
-
+    desc: "Learn how Python stores different types of information.",
     content: `
       <h3>📦 Variables</h3>
-
-      <p>
-        A variable is a name used to store data.
-      </p>
+      <p>A variable stores a value that your program can use.</p>
 
       <pre><code>name = "Alex"
 age = 16
@@ -57,46 +42,39 @@ height = 5.6
 is_student = True</code></pre>
 
       <h3>Common Data Types</h3>
-
       <ul>
         <li><b>str</b> → Text</li>
-        <li><b>int</b> → Whole number</li>
-        <li><b>float</b> → Decimal number</li>
+        <li><b>int</b> → Whole numbers</li>
+        <li><b>float</b> → Decimal numbers</li>
         <li><b>bool</b> → True or False</li>
       </ul>
     `
   },
 
-
   {
     title: "Input & Type Conversion",
-    desc: "Take input from the user and convert values.",
-
+    desc: "Learn how to take user input and convert values.",
     content: `
-      <h3>⌨️ Taking Input</h3>
+      <h3>⌨️ User Input</h3>
 
       <pre><code>name = input("Enter your name: ")
-
 print("Hello", name)</code></pre>
 
       <h3>Type Conversion</h3>
 
       <pre><code>age = int(input("Enter your age: "))
-
 print(age)</code></pre>
 
       <p>
-        <b>input()</b> normally gives you text.
+        <b>input()</b> normally returns text.
         Use <b>int()</b> or <b>float()</b> when you need numbers.
       </p>
     `
   },
 
-
   {
     title: "If / Else",
-    desc: "Make decisions in your Python programs.",
-
+    desc: "Make decisions in Python programs.",
     content: `
       <h3>🤔 Conditions</h3>
 
@@ -106,11 +84,6 @@ if age >= 18:
     print("Adult")
 else:
     print("Under 18")</code></pre>
-
-      <p>
-        Python uses indentation to define the code inside
-        an if or else block.
-      </p>
 
       <h3>Comparison Operators</h3>
 
@@ -125,20 +98,16 @@ else:
     `
   },
 
-
   {
     title: "Loops",
     desc: "Repeat code using for and while loops.",
-
     content: `
       <h3>🔁 For Loop</h3>
 
       <pre><code>for i in range(5):
     print(i)</code></pre>
 
-      <p>
-        This prints numbers from 0 to 4.
-      </p>
+      <p>This prints numbers from 0 to 4.</p>
 
       <h3>While Loop</h3>
 
@@ -150,11 +119,9 @@ while x < 3:
     `
   },
 
-
   {
     title: "Lists",
     desc: "Store multiple values inside one collection.",
-
     content: `
       <h3>📋 Python Lists</h3>
 
@@ -169,20 +136,15 @@ print(fruits[0])</code></pre>
       <h3>Add an Item</h3>
 
       <pre><code>fruits.append("orange")
-
 print(fruits)</code></pre>
 
-      <p>
-        Python list indexes start from <b>0</b>.
-      </p>
+      <p>Python list indexes start from <b>0</b>.</p>
     `
   },
-
 
   {
     title: "Strings",
     desc: "Work with text using useful string methods.",
-
     content: `
       <h3>🔤 Strings</h3>
 
@@ -195,20 +157,17 @@ print(name.capitalize())</code></pre>
       <h3>String Length</h3>
 
       <pre><code>word = "Python"
-
 print(len(word))</code></pre>
 
       <p>
-        <b>len()</b> tells you how many characters are in a string.
+        <b>len()</b> tells you the number of characters.
       </p>
     `
   },
 
-
   {
     title: "Functions",
     desc: "Create reusable blocks of Python code.",
-
     content: `
       <h3>⚙️ Functions</h3>
 
@@ -218,8 +177,7 @@ print(len(word))</code></pre>
 greet("Alex")</code></pre>
 
       <p>
-        Functions help you reuse code instead of writing
-        the same code again and again.
+        Functions allow you to reuse code.
       </p>
 
       <h3>Return</h3>
@@ -233,11 +191,9 @@ print(result)</code></pre>
     `
   },
 
-
   {
     title: "Dictionaries & Sets",
-    desc: "Learn two useful Python collections.",
-
+    desc: "Learn two useful Python collection types.",
     content: `
       <h3>📖 Dictionary</h3>
 
@@ -260,11 +216,9 @@ print(numbers)</code></pre>
     `
   },
 
-
   {
     title: "Mini Project",
-    desc: "Combine your Python skills into a small project.",
-
+    desc: "Combine your Python skills in a small project.",
     content: `
       <h3>🎓 Student Result Project</h3>
 
@@ -280,8 +234,7 @@ else:
     print(name, "needs more practice.")</code></pre>
 
       <p>
-        Try changing this project by adding more subjects,
-        grades and different conditions.
+        Try adding more subjects, grades and conditions.
       </p>
     `
   }
@@ -297,70 +250,56 @@ const quizzes = [
 
   {
     q: "Which function displays text in Python?",
-
     options: [
       "input()",
       "print()",
       "show()",
       "write()"
     ],
-
     answer: 1
   },
 
-
   {
     q: "Which type stores whole numbers?",
-
     options: [
       "str",
       "float",
       "int",
       "bool"
     ],
-
     answer: 2
   },
 
-
   {
     q: "Which symbol starts a Python comment?",
-
     options: [
       "//",
       "#",
       "<!--",
       "**"
     ],
-
     answer: 1
   },
 
-
   {
     q: "What does len() return?",
-
     options: [
       "The length",
       "A random number",
       "The data type",
       "Nothing"
     ],
-
     answer: 0
   },
 
-
   {
     q: "Which collection uses square brackets?",
-
     options: [
       "Tuple",
       "Set",
       "List",
       "Dictionary"
     ],
-
     answer: 2
   }
 
@@ -375,10 +314,8 @@ const projects = [
 
   {
     title: "🧮 Simple Calculator",
-
     description:
       "Create a calculator using input(), numbers and operators.",
-
     code:
 `a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
@@ -388,13 +325,10 @@ print("Difference:", a - b)
 print("Product:", a * b)`
   },
 
-
   {
     title: "🎓 Student Result",
-
     description:
       "Enter marks and check whether a student passed.",
-
     code:
 `name = input("Enter your name: ")
 marks = int(input("Enter marks: "))
@@ -405,13 +339,10 @@ else:
     print(name, "Needs more practice.")`
   },
 
-
   {
     title: "📝 To-Do List",
-
     description:
       "Create a simple list of tasks.",
-
     code:
 `tasks = []
 
@@ -422,13 +353,10 @@ tasks.append("Build project")
 print(tasks)`
   },
 
-
   {
     title: "🔐 Password Checker",
-
     description:
       "Practice strings and if/else conditions.",
-
     code:
 `password = input("Enter password: ")
 
@@ -438,13 +366,10 @@ else:
     print("Wrong password")`
   },
 
-
   {
     title: "📊 Number Analyzer",
-
     description:
-      "Use numbers and calculations to analyze values.",
-
+      "Use calculations to analyze numbers.",
     code:
 `numbers = [10, 20, 30, 40, 50]
 
@@ -462,14 +387,13 @@ print("Average:", total / len(numbers))`
    ===================================================== */
 
 let completedLessons = [];
-
 let xp = 0;
-
 let currentLesson = 0;
 
 let quizIndex = 0;
-
 let quizScore = 0;
+
+let quizXPAlreadyAwarded = false;
 
 
 /* =====================================================
@@ -494,8 +418,7 @@ function loadSavedData() {
 
     if (savedLessons) {
 
-      completedLessons =
-        JSON.parse(savedLessons);
+      completedLessons = JSON.parse(savedLessons);
 
       if (!Array.isArray(completedLessons)) {
         completedLessons = [];
@@ -528,10 +451,11 @@ function loadSavedData() {
     localStorage.getItem("pythonlearn_theme");
 
   if (savedTheme === "dark") {
-
     document.body.classList.add("dark");
-
   }
+
+
+  updateThemeButton();
 
 }
 
@@ -542,15 +466,23 @@ function loadSavedData() {
 
 function saveData() {
 
-  localStorage.setItem(
-    "pythonlearn_completed",
-    JSON.stringify(completedLessons)
-  );
+  try {
 
-  localStorage.setItem(
-    "pythonlearn_xp",
-    String(xp)
-  );
+    localStorage.setItem(
+      "pythonlearn_completed",
+      JSON.stringify(completedLessons)
+    );
+
+    localStorage.setItem(
+      "pythonlearn_xp",
+      String(xp)
+    );
+
+  } catch (error) {
+
+    console.log("Could not save progress.");
+
+  }
 
 }
 
@@ -611,12 +543,14 @@ function showDashboard() {
 
   renderLessons(lessons);
 
+
   const search =
     getElement("searchInput");
 
   if (search) {
     search.value = "";
   }
+
 
   showPage("dashboardPage");
 
@@ -749,23 +683,17 @@ function renderLessons(list) {
       <article class="lesson-card">
 
         <span class="tag">
-
           LESSON ${index + 1}
-
           ${completed ? " ✓ COMPLETED" : ""}
-
         </span>
-
 
         <h3>
           ${lesson.title}
         </h3>
 
-
         <p>
           ${lesson.desc}
         </p>
-
 
         <button
           class="primary-btn"
@@ -831,6 +759,7 @@ function searchLessons() {
         lesson.desc
           .toLowerCase()
           .includes(query)
+
       );
 
     });
@@ -1088,9 +1017,7 @@ function toggleTheme() {
 
 
   const dark =
-    document.body.classList.contains(
-      "dark"
-    );
+    document.body.classList.contains("dark");
 
 
   localStorage.setItem(
@@ -1099,16 +1026,7 @@ function toggleTheme() {
   );
 
 
-  const button =
-    getElement("themeBtn");
-
-
-  if (button) {
-
-    button.textContent =
-      dark ? "☀️" : "🌙";
-
-  }
+  updateThemeButton();
 
 }
 
@@ -1128,9 +1046,7 @@ function updateThemeButton() {
 
 
   button.textContent =
-    document.body.classList.contains(
-      "dark"
-    )
+    document.body.classList.contains("dark")
       ? "☀️"
       : "🌙";
 
@@ -1159,6 +1075,8 @@ function startQuiz() {
   quizIndex = 0;
 
   quizScore = 0;
+
+  quizXPAlreadyAwarded = false;
 
   renderQuiz();
 
@@ -1251,6 +1169,11 @@ function answerQuiz(selected) {
     quizzes[quizIndex];
 
 
+  if (!quiz) {
+    return;
+  }
+
+
   const buttons =
     document.querySelectorAll(
       ".quiz-option"
@@ -1271,6 +1194,7 @@ function answerQuiz(selected) {
   ) {
 
     quizScore++;
+
 
     if (buttons[selected]) {
 
@@ -1327,10 +1251,20 @@ function showQuizResult() {
     quizScore * 10;
 
 
-  xp += earnedXP;
+  /*
+    Prevent accidental double XP
+    if this function is triggered twice.
+  */
 
+  if (!quizXPAlreadyAwarded) {
 
-  saveData();
+    xp += earnedXP;
+
+    saveData();
+
+    quizXPAlreadyAwarded = true;
+
+  }
 
 
   if (progress) {
@@ -1376,6 +1310,14 @@ function showQuizResult() {
 
         </button>
 
+        <button
+          class="secondary-btn"
+          onclick="showDashboard()">
+
+          📊 Dashboard
+
+        </button>
+
       </div>
 
     `;
@@ -1397,79 +1339,57 @@ function showPlayground() {
 
 
 /* =====================================================
-   PLAYGROUND EXAMPLES
+   LOAD CODE EXAMPLES
    ===================================================== */
 
-const playgroundExamples = {
-
-  hello:
-`print("Hello, Python!")`,
-
-
-  variables:
-`name = "Alex"
-age = 16
-
-print("Name:", name)
-print("Age:", age)`,
-
-
-  math:
-`a = 10
-b = 5
-
-print("Sum:", a + b)
-print("Difference:", a - b)
-print("Product:", a * b)
-print("Division:", a / b)`,
-
-
-  loop:
-`for i in range(1, 6):
-    print(i)`,
-
-
-  list:
-`fruits = ["apple", "banana", "mango"]
-
-for fruit in fruits:
-    print(fruit)`
-
-};
-
-
-/* =====================================================
-   LOAD PLAYGROUND EXAMPLE
-   ===================================================== */
-
-function loadExample(name) {
+function loadExample(type) {
 
   const editor =
     getElement("codeEditor");
-
-  const output =
-    getElement("codeOutput");
-
 
   if (!editor) {
     return;
   }
 
 
-  if (
-    playgroundExamples[name]
-  ) {
+  const examples = {
+
+    hello:
+`print("Hello, Python!")`,
+
+    variables:
+`name = "Subraraj"
+age = 16
+
+print("Name:", name)
+print("Age:", age)`,
+
+    math:
+`a = 10
+b = 5
+
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)`,
+
+    loop:
+`for i in range(5):
+    print(i)`,
+
+    list:
+`fruits = ["Apple", "Mango", "Banana"]
+
+print(fruits)
+print(fruits[0])`
+
+  };
+
+
+  if (examples[type]) {
 
     editor.value =
-      playgroundExamples[name];
-
-  }
-
-
-  if (output) {
-
-    output.textContent =
-      "Example loaded. Press Run Code ▶";
+      examples[type];
 
   }
 
@@ -1477,7 +1397,7 @@ function loadExample(name) {
 
 
 /* =====================================================
-   CLEAR PLAYGROUND
+   CLEAR CODE
    ===================================================== */
 
 function clearCode() {
@@ -1490,16 +1410,14 @@ function clearCode() {
 
 
   if (editor) {
-
     editor.value = "";
-
   }
 
 
   if (output) {
 
     output.textContent =
-      "Output cleared.";
+      'Click "Run Code" to see output.';
 
   }
 
@@ -1507,324 +1425,7 @@ function clearCode() {
 
 
 /* =====================================================
-   PYTHON VALUE PARSER
-   ===================================================== */
-
-function parsePythonValue(
-  value,
-  variables
-) {
-
-  value =
-    value.trim();
-
-
-  /* String */
-
-  if (
-    (
-      value.startsWith('"') &&
-      value.endsWith('"')
-    )
-
-    ||
-
-    (
-      value.startsWith("'") &&
-      value.endsWith("'")
-    )
-  ) {
-
-    return value.slice(
-      1,
-      -1
-    );
-
-  }
-
-
-  /* Boolean */
-
-  if (value === "True") {
-
-    return true;
-
-  }
-
-
-  if (value === "False") {
-
-    return false;
-
-  }
-
-
-  /* Number */
-
-  if (
-    value !== "" &&
-    !isNaN(Number(value))
-  ) {
-
-    return Number(value);
-
-  }
-
-
-  /* Variable */
-
-  if (
-    Object.prototype.hasOwnProperty.call(
-      variables,
-      value
-    )
-  ) {
-
-    return variables[value];
-
-  }
-
-
-  /* List */
-
-  if (
-    value.startsWith("[") &&
-    value.endsWith("]")
-  ) {
-
-    return value;
-
-  }
-
-
-  return value;
-
-}
-
-
-/* =====================================================
-   SPLIT PRINT ARGUMENTS
-   ===================================================== */
-
-function splitPrintArguments(text) {
-
-  const parts = [];
-
-  let current = "";
-
-  let quote = null;
-
-
-  for (
-    let i = 0;
-    i < text.length;
-    i++
-  ) {
-
-    const char =
-      text[i];
-
-
-    if (
-      (
-        char === '"' ||
-        char === "'"
-      )
-      &&
-      (
-        quote === null ||
-        quote === char
-      )
-    ) {
-
-      if (quote === null) {
-
-        quote = char;
-
-      } else {
-
-        quote = null;
-
-      }
-
-      current += char;
-
-      continue;
-
-    }
-
-
-    if (
-      char === "," &&
-      quote === null
-    ) {
-
-      parts.push(
-        current.trim()
-      );
-
-      current = "";
-
-    } else {
-
-      current += char;
-
-    }
-
-  }
-
-
-  if (current.trim() !== "") {
-
-    parts.push(
-      current.trim()
-    );
-
-  }
-
-
-  return parts;
-
-}
-
-
-/* =====================================================
-   EVALUATE SIMPLE EXPRESSION
-   ===================================================== */
-
-function evaluateExpression(
-  expression,
-  variables
-) {
-
-  expression =
-    expression.trim();
-
-
-  const parts =
-    splitPrintArguments(
-      expression
-    );
-
-
-  if (parts.length > 1) {
-
-    return parts
-      .map(function(part) {
-
-        return evaluateExpression(
-          part,
-          variables
-        );
-
-      })
-      .join(" ");
-
-  }
-
-
-  if (
-    expression.includes("+") ||
-    expression.includes("-") ||
-    expression.includes("*") ||
-    expression.includes("/")
-  ) {
-
-    const safeExpression =
-      expression.replace(
-        /[a-zA-Z_][a-zA-Z0-9_]*/g,
-        function(name) {
-
-          if (
-            Object.prototype.hasOwnProperty.call(
-              variables,
-              name
-            )
-          ) {
-
-            const value =
-              variables[name];
-
-            if (
-              typeof value === "number"
-            ) {
-
-              return String(value);
-
-            }
-
-          }
-
-          return name;
-
-        }
-      );
-
-
-    if (
-      /^[0-9+\-*/().\s]+$/.test(
-        safeExpression
-      )
-    ) {
-
-      try {
-
-        return Function(
-          '"use strict"; return (' +
-          safeExpression +
-          ')'
-        )();
-
-      } catch (error) {
-
-        /* Continue */
-
-      }
-
-    }
-
-  }
-
-
-  return parsePythonValue(
-    expression,
-    variables
-  );
-
-}
-
-
-/* =====================================================
-   SIMULATE PRINT
-   ===================================================== */
-
-function simulatePrint(
-  expression,
-  variables
-) {
-
-  const values =
-    splitPrintArguments(
-      expression
-    );
-
-
-  return values
-    .map(function(value) {
-
-      return evaluateExpression(
-        value,
-        variables
-      );
-
-    })
-    .join(" ");
-
-}
-
-
-/* =====================================================
-   RUN CODE
+   BASIC PYTHON PLAYGROUND
    ===================================================== */
 
 function runCode() {
@@ -1848,258 +1449,137 @@ function runCode() {
   if (code === "") {
 
     output.textContent =
-      "⚠️ Write some Python code first.";
+      "Please write some Python code first.";
 
     return;
 
   }
 
 
-  const lines =
-    code.split("\n");
+  /*
+    This is a beginner JavaScript-based
+    simulation for simple Python commands.
 
-
-  const variables = {};
-
-  const result = [];
+    It is NOT a full Python interpreter.
+  */
 
 
   try {
 
-    for (
-      let i = 0;
-      i < lines.length;
-      i++
-    ) {
+    let result = "";
 
-      let line =
-        lines[i].trim();
 
+    /* print("text") */
 
-      /* Empty line */
-
-      if (line === "") {
-        continue;
-      }
-
-
-      /* Comment */
-
-      if (
-        line.startsWith("#")
-      ) {
-
-        continue;
-
-      }
-
-
-      /* Variable assignment */
-
-      const assignment =
-        line.match(
-          /^([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(.+)$/
-        );
-
-
-      if (
-        assignment &&
-        !line.includes("==")
-      ) {
-
-        const variableName =
-          assignment[1];
-
-        const variableValue =
-          assignment[2];
-
-
-        variables[
-          variableName
-        ] =
-          evaluateExpression(
-            variableValue,
-            variables
-          );
-
-
-        continue;
-
-      }
-
-
-      /* Print */
-
-      const printMatch =
-        line.match(
-          /^print\s*\((.*)\)\s*$/
-        );
-
-
-      if (printMatch) {
-
-        result.push(
-          simulatePrint(
-            printMatch[1],
-            variables
-          )
-        );
-
-        continue;
-
-      }
-
-
-      /* For loop */
-
-      const rangeMatch =
-        line.match(
-          /^for\s+([a-zA-Z_][a-zA-Z0-9_]*)\s+in\s+range\((\d+)(?:\s*,\s*(\d+))?\):$/
-        );
-
-
-      if (rangeMatch) {
-
-        const variable =
-          rangeMatch[1];
-
-        const first =
-          rangeMatch[3]
-            ? Number(rangeMatch[2])
-            : 0;
-
-        const last =
-          rangeMatch[3]
-            ? Number(rangeMatch[3])
-            : Number(rangeMatch[2]);
-
-
-        let loopOutput = [];
-
-
-        for (
-          let n = first;
-          n < last;
-          n++
-        ) {
-
-          loopOutput.push(
-            String(n)
-          );
-
-        }
-
-
-        /*
-          Look for the next indented
-          print statement.
-        */
-
-        if (
-          i + 1 < lines.length
-        ) {
-
-          const nextLine =
-            lines[i + 1];
-
-
-          const loopPrint =
-            nextLine.trim().match(
-              /^print\s*\((.*)\)$/
-            );
-
-
-          if (loopPrint) {
-
-            const expression =
-              loopPrint[1].trim();
-
-
-            if (
-              expression === variable
-            ) {
-
-              result.push(
-                loopOutput.join("\n")
-              );
-
-              i++;
-
-              continue;
-
-            }
-
-          }
-
-        }
-
-
-        result.push(
-          "Loop detected. Try printing the loop variable."
-        );
-
-        continue;
-
-      }
-
-
-      /* If statement */
-
-      if (
-        line.startsWith("if ")
-      ) {
-
-        result.push(
-          "✓ If condition detected."
-        );
-
-        continue;
-
-      }
-
-
-      /* Else */
-
-      if (
-        line === "else:"
-      ) {
-
-        result.push(
-          "✓ Else block detected."
-        );
-
-        continue;
-
-      }
-
-
-      /* Unsupported */
-
-      result.push(
-        "✓ Code recognized: " +
-        line
+    const printMatches =
+      code.matchAll(
+        /print\s*\(\s*["']([^"']*)["']\s*\)/g
       );
 
+
+    for (const match of printMatches) {
+
+      result +=
+        match[1] + "\n";
+
+    }
+
+
+    /* Simple number variables */
+
+    const variables = {};
+
+    const variableMatches =
+      code.matchAll(
+        /^\s*([a-zA-Z_]\w*)\s*=\s*(-?\d+(?:\.\d+)?)\s*$/gm
+      );
+
+
+    for (const match of variableMatches) {
+
+      variables[match[1]] =
+        Number(match[2]);
+
     }
 
 
-    if (result.length === 0) {
+    /* print(variable) */
 
-      output.textContent =
-        "No output.";
+    const variablePrintMatches =
+      code.matchAll(
+        /print\s*\(\s*([a-zA-Z_]\w*)\s*\)/g
+      );
 
-    } else {
 
-      output.textContent =
-        result.join("\n");
+    for (const match of variablePrintMatches) {
+
+      const variableName =
+        match[1];
+
+      if (
+        Object.prototype.hasOwnProperty.call(
+          variables,
+          variableName
+        )
+      ) {
+
+        result +=
+          variables[variableName] +
+          "\n";
+
+      }
 
     }
+
+
+    /* print("text", variable) */
+
+    const mixedMatches =
+      code.matchAll(
+        /print\s*\(\s*["']([^"']*)["']\s*,\s*([a-zA-Z_]\w*)\s*\)/g
+      );
+
+
+    for (const match of mixedMatches) {
+
+      const variableName =
+        match[2];
+
+      if (
+        Object.prototype.hasOwnProperty.call(
+          variables,
+          variableName
+        )
+      ) {
+
+        result +=
+          match[1] +
+          " " +
+          variables[variableName] +
+          "\n";
+
+      }
+
+    }
+
+
+    if (result === "") {
+
+      result =
+        "Code entered successfully.\n\n" +
+        "The current playground supports simple beginner examples.\n" +
+        "For full Python execution, a real Python engine will be added later.";
+
+    }
+
+
+    output.textContent =
+      result.trim();
 
   } catch (error) {
 
     output.textContent =
-      "⚠️ Could not simulate this code.\n\n" +
-      "Try one of the Quick Examples.";
+      "Error: " + error.message;
 
   }
 
@@ -2128,7 +1608,6 @@ function renderProjects() {
   const container =
     getElement("projectList");
 
-
   if (!container) {
     return;
   }
@@ -2154,9 +1633,9 @@ function renderProjects() {
 
           <button
             class="primary-btn"
-            onclick="startProject(${index})">
+            onclick="openProject(${index})">
 
-            ▶ Start Project
+            💻 Open Project
 
           </button>
 
@@ -2175,10 +1654,10 @@ function renderProjects() {
 
 
 /* =====================================================
-   START PROJECT
+   OPEN PROJECT
    ===================================================== */
 
-function startProject(index) {
+function openProject(index) {
 
   if (
     index < 0 ||
@@ -2194,8 +1673,14 @@ function startProject(index) {
     projects[index];
 
 
+  showPlayground();
+
+
   const editor =
     getElement("codeEditor");
+
+  const output =
+    getElement("codeOutput");
 
 
   if (editor) {
@@ -2206,82 +1691,60 @@ function startProject(index) {
   }
 
 
-  showPlayground();
+  if (output) {
 
-
-  setTimeout(function() {
-
-    const output =
-      getElement("codeOutput");
-
-    if (output) {
-
-      output.textContent =
-        "Project loaded! Press ▶ Run Code.";
-
-    }
-
-  }, 100);
-
-}
-
-
-/* =====================================================
-   KEYBOARD SHORTCUT
-   ===================================================== */
-
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    /*
-      Ctrl + Enter
-      runs Playground code.
-    */
-
-    if (
-      event.ctrlKey &&
-      event.key === "Enter"
-    ) {
-
-      const playground =
-        getElement("playgroundPage");
-
-
-      if (
-        playground &&
-        playground.classList.contains(
-          "active"
-        )
-      ) {
-
-        runCode();
-
-      }
-
-    }
+    output.textContent =
+      "Project loaded.\nClick \"Run Code\" to test the example.";
 
   }
-);
+
+}
 
 
 /* =====================================================
    INITIALIZE APP
    ===================================================== */
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
+function initializeApp() {
 
-    loadSavedData();
+  loadSavedData();
 
-    updateThemeButton();
+  updateDashboard();
 
-    updateDashboard();
+  renderLessons(lessons);
 
-    renderLessons(lessons);
+  renderProjects();
 
-    renderProjects();
+  updateThemeButton();
+
+
+  const editor =
+    getElement("codeEditor");
+
+  if (
+    editor &&
+    editor.value.trim() === ""
+  ) {
+
+    editor.value =
+      'print("Hello, Python!")';
 
   }
+
+}
+
+
+/* =====================================================
+   START APP
+   ===================================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  initializeApp
 );
+
+
+/* =====================================================
+   PYTHONLEARN 3.4
+   END
+   ===================================================== */
