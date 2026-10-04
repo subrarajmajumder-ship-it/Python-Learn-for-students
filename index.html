@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -15,21 +17,30 @@
 
   <meta
     name="description"
-    content="PythonLearn 3.4 - Learn Python from Zero to Coding"
+    content="PythonLearn - Learn Python from Zero to Coding"
   >
 
-  <link rel="manifest" href="manifest.json">
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
 
   <title>PythonLearn 3.4</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
-  <!-- ==================================================
+
+  <!-- =====================================================
        HEADER
-       ================================================== -->
+       ===================================================== -->
 
   <header class="topbar">
 
@@ -42,10 +53,17 @@
       🏠
     </button>
 
+
     <div class="brand">
+
       🐍 PythonLearn
-      <span>3.4</span>
+
+      <span>
+        3.4
+      </span>
+
     </div>
+
 
     <button
       class="icon-btn"
@@ -59,16 +77,17 @@
   </header>
 
 
-  <!-- ==================================================
+
+  <!-- =====================================================
        MAIN
-       ================================================== -->
+       ===================================================== -->
 
   <main>
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          HOME
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="homePage"
@@ -81,17 +100,16 @@
           🐍
         </div>
 
-        <p class="eyebrow hero-eyebrow">
-          PYTHONLEARN 3.4
-        </p>
 
         <h1>
-          Learn Python
+          PythonLearn
         </h1>
 
+
         <p>
-          From Zero to Coding 🚀
+          Learn Python from Zero to Coding 🚀
         </p>
+
 
         <button
           class="primary-btn"
@@ -100,12 +118,28 @@
           🚀 Start Learning
         </button>
 
+
+        <!-- DOWNLOAD APK BUTTON -->
+
+        <br><br>
+
+        <a
+          class="primary-btn"
+          href="https://github.com/subrarajmajumder-ship-it/Python-Learn-for-students/releases/download/V3.4/PythonLearn.apk"
+          target="_blank"
+          rel="noopener"
+        >
+          📱 Download PythonLearn 3.4
+        </a>
+
       </div>
 
 
-      <!-- HOME FEATURES -->
+
+      <!-- FEATURES -->
 
       <div class="feature-grid">
+
 
         <div class="feature">
 
@@ -114,7 +148,7 @@
           </div>
 
           <h3>
-            15 Lessons
+            10 Lessons
           </h3>
 
           <p>
@@ -122,6 +156,7 @@
           </p>
 
         </div>
+
 
 
         <div class="feature">
@@ -135,10 +170,11 @@
           </h3>
 
           <p>
-            Test your knowledge
+            Test your Python knowledge
           </p>
 
         </div>
+
 
 
         <div class="feature">
@@ -158,36 +194,22 @@
         </div>
 
 
+
         <div class="feature">
 
           <div class="feature-icon">
-            🏆
+            🚀
           </div>
 
           <h3>
-            Achievements
+            Projects
           </h3>
 
           <p>
-            Earn XP and badges
+            Build Python projects
           </p>
 
         </div>
-
-      </div>
-
-
-      <!-- VERSION INFO -->
-
-      <div class="tip-box home-tip">
-
-        <strong>
-          🐍 PythonLearn 3.4
-        </strong>
-
-        <p>
-          Learn • Practice • Build • Achieve
-        </p>
 
       </div>
 
@@ -195,9 +217,9 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          DASHBOARD
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="dashboardPage"
@@ -209,7 +231,7 @@
         <div>
 
           <p class="eyebrow">
-            PYTHONLEARN 3.4
+            PYTHONLEARN
           </p>
 
           <h2>
@@ -217,6 +239,7 @@
           </h2>
 
         </div>
+
 
         <button
           class="secondary-btn"
@@ -228,9 +251,11 @@
       </div>
 
 
-      <!-- STATS -->
+
+      <!-- STATISTICS -->
 
       <div class="stats-grid">
+
 
         <div class="stat-card">
 
@@ -239,7 +264,7 @@
           </div>
 
           <strong id="lessonCount">
-            0 / 15
+            0 / 10
           </strong>
 
           <small>
@@ -247,6 +272,7 @@
           </small>
 
         </div>
+
 
 
         <div class="stat-card">
@@ -264,6 +290,7 @@
           </small>
 
         </div>
+
 
 
         <div class="stat-card">
@@ -285,6 +312,7 @@
       </div>
 
 
+
       <!-- PROGRESS -->
 
       <div class="progress-card">
@@ -296,55 +324,24 @@
           </span>
 
           <b id="progressText">
-            0 / 15 Lessons Completed
+            0 / 10 Lessons Completed
           </b>
 
         </div>
+
 
         <div class="progress-track">
 
           <div
             id="progressFill"
             class="progress-fill"
-          ></div>
-
-        </div>
-
-      </div>
-
-
-      <!-- ACHIEVEMENT SUMMARY -->
-
-      <div class="achievement-summary">
-
-        <div>
-
-          <span class="achievement-icon">
-            🏆
-          </span>
-
-          <div>
-
-            <strong>
-              Achievements
-            </strong>
-
-            <small id="achievementCount">
-              0 unlocked
-            </small>
-
+          >
           </div>
 
         </div>
 
-        <button
-          class="secondary-btn"
-          onclick="showAchievements()"
-        >
-          View
-        </button>
-
       </div>
+
 
 
       <!-- SEARCH -->
@@ -355,55 +352,63 @@
         type="search"
         placeholder="🔎 Search lessons..."
         oninput="searchLessons()"
-        autocomplete="off"
       >
+
 
 
       <!-- QUICK NAVIGATION -->
 
       <div class="quick-nav">
 
-        <button onclick="showQuiz()">
+        <button
+          onclick="showQuiz()"
+        >
           🧠 Quiz
         </button>
 
-        <button onclick="showPlayground()">
+
+        <button
+          onclick="showPlayground()"
+        >
           💻 Playground
         </button>
 
-        <button onclick="showProjects()">
+
+        <button
+          onclick="showProjects()"
+        >
           🚀 Projects
         </button>
 
-        <button onclick="showAchievements()">
-          🏆 Achievements
-        </button>
 
-        <button onclick="resetProgress()">
+        <button
+          onclick="resetProgress()"
+        >
           🔄 Reset Progress
         </button>
 
       </div>
 
 
-      <!-- LESSONS -->
 
       <h2 class="section-title">
         📚 Python Lessons
       </h2>
 
+
       <div
         id="lessonList"
         class="lesson-list"
-      ></div>
+      >
+      </div>
 
     </section>
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          LESSON PAGE
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="lessonPage"
@@ -436,13 +441,15 @@
         <p
           id="detailDescription"
           class="muted"
-        ></p>
+        >
+        </p>
 
 
         <div
           id="detailContent"
           class="lesson-content"
-        ></div>
+        >
+        </div>
 
 
         <div class="lesson-actions">
@@ -479,9 +486,9 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          QUIZ PAGE
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="quizPage"
@@ -502,20 +509,24 @@
           KNOWLEDGE CHECK
         </p>
 
+
         <h2>
           🧠 Python Quiz
         </h2>
+
 
         <div
           id="quizProgress"
           class="quiz-progress"
         >
-          Question 1 / 10
+          Question 1 / 5
         </div>
+
 
         <div
           id="quizContent"
-        ></div>
+        >
+        </div>
 
       </div>
 
@@ -523,9 +534,9 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          PLAYGROUND PAGE
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="playgroundPage"
@@ -546,16 +557,19 @@
           CODING PLAYGROUND
         </p>
 
+
         <h2>
           💻 Python Playground
         </h2>
+
 
         <p class="muted">
           Write and practice beginner Python code.
         </p>
 
 
-        <!-- QUICK EXAMPLES -->
+
+        <!-- EXAMPLES -->
 
         <div class="example-section">
 
@@ -563,35 +577,47 @@
             Quick Examples
           </h3>
 
+
           <div class="example-row">
 
-            <button onclick="loadExample('hello')">
+            <button
+              onclick="loadExample('hello')"
+            >
               👋 Hello World
             </button>
 
-            <button onclick="loadExample('variables')">
+
+            <button
+              onclick="loadExample('variables')"
+            >
               📦 Variables
             </button>
 
-            <button onclick="loadExample('math')">
+
+            <button
+              onclick="loadExample('math')"
+            >
               🧮 Calculator
             </button>
 
-            <button onclick="loadExample('loop')">
+
+            <button
+              onclick="loadExample('loop')"
+            >
               🔁 Loop
             </button>
 
-            <button onclick="loadExample('list')">
-              📋 List
-            </button>
 
-            <button onclick="loadExample('function')">
-              ⚙️ Function
+            <button
+              onclick="loadExample('list')"
+            >
+              📋 List
             </button>
 
           </div>
 
         </div>
+
 
 
         <!-- CODE EDITOR -->
@@ -613,7 +639,6 @@
         >print("Hello, Python!")</textarea>
 
 
-        <!-- EDITOR BUTTONS -->
 
         <div class="editor-actions">
 
@@ -623,6 +648,7 @@
           >
             ▶ Run Code
           </button>
+
 
           <button
             class="secondary-btn"
@@ -634,11 +660,11 @@
         </div>
 
 
-        <!-- OUTPUT -->
 
         <label class="editor-label">
           Output
         </label>
+
 
         <pre
           id="codeOutput"
@@ -646,27 +672,30 @@
         >Click "Run Code" to see output.</pre>
 
 
-        <!-- TIP -->
 
         <div class="tip-box">
 
           💡 <b>Tip:</b>
 
+          Try simple commands like:
+
           <br><br>
 
-          Try:
+          <code>
+            print("Hello")
+          </code>
 
           <br>
 
-          <code>print("Hello")</code>
+          <code>
+            age = 16
+          </code>
 
           <br>
 
-          <code>age = 16</code>
-
-          <br>
-
-          <code>print(age)</code>
+          <code>
+            print(age)
+          </code>
 
         </div>
 
@@ -676,9 +705,9 @@
 
 
 
-    <!-- ==================================================
+    <!-- =====================================================
          PROJECTS PAGE
-         ================================================== -->
+         ===================================================== -->
 
     <section
       id="projectsPage"
@@ -699,62 +728,22 @@
           BUILD SOMETHING
         </p>
 
+
         <h2>
           🚀 Python Projects
         </h2>
 
+
         <p class="muted">
-          Practice your Python skills by building projects.
+          Practice your Python skills by building small projects.
         </p>
 
 
         <div
           id="projectList"
           class="project-list"
-        ></div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         ACHIEVEMENTS PAGE
-         ================================================== -->
-
-    <section
-      id="achievementsPage"
-      class="page"
-    >
-
-      <button
-        class="back-btn"
-        onclick="showDashboard()"
-      >
-        ← Dashboard
-      </button>
-
-
-      <div class="achievements-card">
-
-        <p class="eyebrow">
-          YOUR PROGRESS
-        </p>
-
-        <h2>
-          🏆 Achievements
-        </h2>
-
-        <p class="muted">
-          Complete lessons and quizzes to unlock achievements.
-        </p>
-
-
-        <div
-          id="achievementList"
-          class="achievement-list"
-        ></div>
+        >
+        </div>
 
       </div>
 
@@ -765,9 +754,9 @@
 
 
 
-  <!-- ==================================================
+  <!-- =====================================================
        FOOTER
-       ================================================== -->
+       ===================================================== -->
 
   <footer>
 
@@ -776,17 +765,20 @@
     </p>
 
     <p>
-      Learn • Practice • Build • Achieve 🚀
+      Learn • Practice • Build 🚀
     </p>
 
   </footer>
 
 
-  <!-- ==================================================
+
+  <!-- =====================================================
        JAVASCRIPT
-       ================================================== -->
+       ===================================================== -->
 
   <script src="script.js"></script>
 
+
 </body>
+
 </html>
