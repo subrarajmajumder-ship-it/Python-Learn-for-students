@@ -1,9 +1,12 @@
 /* =====================================================
-   PythonLearn 3.3
+   PythonLearn 3.4
    COMPLETE STYLE.CSS
    ===================================================== */
 
-/* ---------- RESET ---------- */
+
+/* =====================================================
+   RESET
+   ===================================================== */
 
 * {
   box-sizing: border-box;
@@ -17,11 +20,20 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background: #f5f6fb;
   color: #20233a;
+
   line-height: 1.6;
-  transition: background 0.3s ease, color 0.3s ease;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 button,
@@ -36,50 +48,13 @@ button {
 
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
-
-/* =====================================================
-   DARK THEME
-   ===================================================== */
-
-body.dark {
-  background: #171827;
-  color: #f4f4fb;
-}
-
-body.dark .topbar,
-body.dark .feature,
-body.dark .stat-card,
-body.dark .progress-card,
-body.dark .lesson-card,
-body.dark .lesson-detail,
-body.dark .quiz-card,
-body.dark .playground-card,
-body.dark .projects-card,
-body.dark .search-box,
-body.dark .secondary-btn,
-body.dark .back-btn,
-body.dark .quick-nav button,
-body.dark .example-row button {
-  background: #222438;
-  border-color: #363951;
-  color: #f4f4fb;
-}
-
-body.dark .muted,
-body.dark .feature p,
-body.dark .stat-card small {
-  color: #b7bacb;
-}
-
-body.dark .progress-track {
-  background: #363951;
-}
-
-body.dark footer {
-  color: #aeb1c3;
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -102,8 +77,57 @@ body.dark footer {
 
   --success: #19a463;
   --danger: #d9534f;
+  --warning: #e6a700;
 
-  --shadow: 0 8px 28px rgba(40, 42, 70, 0.09);
+  --shadow:
+    0 8px 28px rgba(40, 42, 70, 0.09);
+}
+
+
+/* =====================================================
+   DARK THEME
+   ===================================================== */
+
+body.dark {
+  background: #171827;
+  color: #f4f4fb;
+}
+
+body.dark .topbar,
+body.dark .feature,
+body.dark .stat-card,
+body.dark .progress-card,
+body.dark .achievement-summary,
+body.dark .lesson-card,
+body.dark .lesson-detail,
+body.dark .quiz-card,
+body.dark .playground-card,
+body.dark .projects-card,
+body.dark .achievements-card,
+body.dark .search-box,
+body.dark .secondary-btn,
+body.dark .back-btn,
+body.dark .quick-nav button,
+body.dark .example-row button,
+body.dark .achievement-item {
+  background: #222438;
+  border-color: #363951;
+  color: #f4f4fb;
+}
+
+body.dark .muted,
+body.dark .feature p,
+body.dark .stat-card small,
+body.dark .achievement-item p {
+  color: #b7bacb;
+}
+
+body.dark .progress-track {
+  background: #363951;
+}
+
+body.dark footer {
+  color: #aeb1c3;
 }
 
 
@@ -128,7 +152,8 @@ body.dark footer {
 
   border-bottom: 1px solid var(--border);
 
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.07);
 }
 
 .brand {
@@ -143,14 +168,15 @@ body.dark footer {
 .brand span {
   margin-left: 5px;
 
+  padding: 4px 7px;
+
   font-size: 12px;
   font-weight: 800;
 
   color: var(--primary);
 
-  background: rgba(108, 92, 231, 0.1);
-
-  padding: 4px 7px;
+  background:
+    rgba(108, 92, 231, 0.1);
 
   border-radius: 6px;
 }
@@ -167,6 +193,7 @@ body.dark footer {
   border-radius: 12px;
 
   background: transparent;
+
   color: var(--text);
 
   font-size: 21px;
@@ -175,7 +202,9 @@ body.dark footer {
 }
 
 .icon-btn:hover {
-  background: rgba(108, 92, 231, 0.1);
+  background:
+    rgba(108, 92, 231, 0.1);
+
   transform: scale(1.04);
 }
 
@@ -201,7 +230,8 @@ main {
 .page {
   display: none;
 
-  animation: pageIn 0.25s ease;
+  animation:
+    pageIn 0.25s ease;
 }
 
 .page.active {
@@ -209,6 +239,7 @@ main {
 }
 
 @keyframes pageIn {
+
   from {
     opacity: 0;
     transform: translateY(6px);
@@ -218,6 +249,7 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
 
 
@@ -254,14 +286,16 @@ main {
 }
 
 .hero-emoji {
-  font-size: 58px;
-
   margin-bottom: 8px;
 
-  animation: floatSnake 2.5s ease-in-out infinite;
+  font-size: 58px;
+
+  animation:
+    floatSnake 2.5s ease-in-out infinite;
 }
 
 @keyframes floatSnake {
+
   0%,
   100% {
     transform: translateY(0);
@@ -270,6 +304,15 @@ main {
   50% {
     transform: translateY(-7px);
   }
+
+}
+
+.hero-eyebrow {
+  color: #ffffff;
+
+  opacity: 0.85;
+
+  margin-bottom: 4px;
 }
 
 .hero h1 {
@@ -279,7 +322,7 @@ main {
   font-weight: 800;
 }
 
-.hero p {
+.hero p:not(.eyebrow) {
   margin-bottom: 26px;
 
   font-size: 18px;
@@ -364,7 +407,8 @@ main {
 .feature-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 
   gap: 14px;
 
@@ -384,7 +428,8 @@ main {
 
   box-shadow: var(--shadow);
 
-  transition: transform 0.2s ease;
+  transition:
+    transform 0.2s ease;
 }
 
 .feature:hover {
@@ -429,6 +474,7 @@ h2 {
   margin: 4px 0;
 
   font-size: 30px;
+
   line-height: 1.25;
 }
 
@@ -459,7 +505,8 @@ h3 {
 .stats-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 14px;
 }
@@ -556,15 +603,79 @@ h3 {
   width: 0%;
   height: 100%;
 
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--primary-light)
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary-light)
+    );
 
   border-radius: 30px;
 
-  transition: width 0.5s ease;
+  transition:
+    width 0.5s ease;
+}
+
+
+/* =====================================================
+   ACHIEVEMENT SUMMARY
+   ===================================================== */
+
+.achievement-summary {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 16px;
+
+  padding: 17px 20px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 20px;
+
+  box-shadow: var(--shadow);
+}
+
+.achievement-summary > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.achievement-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(108, 92, 231, 0.1);
+
+  font-size: 25px;
+}
+
+.achievement-summary strong,
+.achievement-summary small {
+  display: block;
+}
+
+.achievement-summary small {
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
 
@@ -589,7 +700,8 @@ h3 {
 
   color: var(--text);
 
-  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+  box-shadow:
+    0 3px 12px rgba(0,0,0,0.03);
 
   transition: 0.2s;
 }
@@ -598,7 +710,8 @@ h3 {
   border-color: var(--primary);
 
   box-shadow:
-    0 0 0 3px rgba(108, 92, 231, 0.12);
+    0 0 0 3px
+    rgba(108, 92, 231, 0.12);
 }
 
 
@@ -676,7 +789,8 @@ h3 {
 .lesson-card:hover {
   transform: translateY(-2px);
 
-  border-color: rgba(108, 92, 231, 0.4);
+  border-color:
+    rgba(108, 92, 231, 0.4);
 }
 
 .lesson-card .tag {
@@ -838,13 +952,15 @@ h3 {
 .quiz-option.correct {
   border-color: var(--success);
 
-  background: rgba(25, 164, 99, 0.12);
+  background:
+    rgba(25, 164, 99, 0.12);
 }
 
 .quiz-option.wrong {
   border-color: var(--danger);
 
-  background: rgba(217, 83, 79, 0.12);
+  background:
+    rgba(217, 83, 79, 0.12);
 }
 
 
@@ -946,7 +1062,8 @@ h3 {
   border-color: var(--primary);
 
   box-shadow:
-    0 0 0 3px rgba(108, 92, 231, 0.12);
+    0 0 0 3px
+    rgba(108, 92, 231, 0.12);
 }
 
 .editor-actions {
@@ -992,17 +1109,26 @@ h3 {
 
   padding: 15px;
 
-  background: rgba(108, 92, 231, 0.09);
+  background:
+    rgba(108, 92, 231, 0.09);
 
-  border: 1px solid rgba(108, 92, 231, 0.18);
+  border: 1px solid
+    rgba(108, 92, 231, 0.18);
 
   border-radius: 13px;
+}
+
+.tip-box p {
+  color: var(--muted);
+
+  margin-top: 4px;
 }
 
 .tip-box code {
   padding: 2px 5px;
 
-  background: rgba(108, 92, 231, 0.12);
+  background:
+    rgba(108, 92, 231, 0.12);
 
   border-radius: 5px;
 
@@ -1011,6 +1137,12 @@ h3 {
     Monaco,
     "Courier New",
     monospace;
+}
+
+.home-tip {
+  text-align: center;
+
+  margin-top: 18px;
 }
 
 
@@ -1051,7 +1183,8 @@ h3 {
 }
 
 .project-item:hover {
-  border-color: rgba(108, 92, 231, 0.45);
+  border-color:
+    rgba(108, 92, 231, 0.45);
 
   transform: translateY(-2px);
 }
@@ -1066,6 +1199,93 @@ h3 {
   margin-bottom: 13px;
 
   color: var(--muted);
+}
+
+
+/* =====================================================
+   ACHIEVEMENTS
+   ===================================================== */
+
+.achievements-card {
+  padding: 25px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 22px;
+
+  box-shadow: var(--shadow);
+}
+
+.achievement-list {
+  display: grid;
+
+  gap: 13px;
+
+  margin-top: 20px;
+}
+
+.achievement-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 17px;
+
+  transition: 0.2s;
+}
+
+.achievement-item.unlocked {
+  border-color:
+    rgba(108, 92, 231, 0.45);
+
+  box-shadow:
+    0 5px 20px
+    rgba(108, 92, 231, 0.08);
+}
+
+.achievement-item.locked {
+  opacity: 0.55;
+}
+
+.achievement-badge {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    rgba(108, 92, 231, 0.1);
+
+  font-size: 28px;
+}
+
+.achievement-item h3 {
+  margin-bottom: 3px;
+
+  font-size: 17px;
+}
+
+.achievement-item p {
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
 
@@ -1085,6 +1305,43 @@ footer {
 
 footer p + p {
   margin-top: 3px;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid
+    rgba(108, 92, 231, 0.25);
+
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   NO SEARCH RESULTS
+   ===================================================== */
+
+.lesson-list:empty::after {
+  content: "🔎 No lessons found";
+
+  display: block;
+
+  padding: 25px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
 }
 
 
@@ -1111,7 +1368,8 @@ footer p + p {
   }
 
   .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .stats-grid {
@@ -1135,7 +1393,8 @@ footer p + p {
   }
 
   .quick-nav button {
-    flex: 1 1 calc(50% - 9px);
+    flex:
+      1 1 calc(50% - 9px);
   }
 
 }
@@ -1203,7 +1462,8 @@ footer p + p {
   .lesson-detail,
   .quiz-card,
   .playground-card,
-  .projects-card {
+  .projects-card,
+  .achievements-card {
     padding: 18px;
 
     border-radius: 18px;
@@ -1216,7 +1476,8 @@ footer p + p {
   .quick-nav {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .quick-nav button {
@@ -1226,7 +1487,8 @@ footer p + p {
   .example-row {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
   }
 
   .example-row button {
@@ -1237,46 +1499,41 @@ footer p + p {
     min-height: 220px;
   }
 
+  .achievement-summary {
+    align-items: flex-start;
+  }
+
+  .achievement-summary .secondary-btn {
+    min-height: 40px;
+  }
+
+  .achievement-item {
+    align-items: flex-start;
+  }
+
 }
 
 
 /* =====================================================
-   ACCESSIBILITY / TOUCH
+   EXTRA SMALL PHONES
    ===================================================== */
 
-button,
-input,
-textarea {
-  -webkit-tap-highlight-color: transparent;
-}
+@media (max-width: 350px) {
 
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid rgba(108, 92, 231, 0.25);
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
 
-  outline-offset: 2px;
-}
+  .quick-nav {
+    grid-template-columns: 1fr;
+  }
 
+  .example-row {
+    grid-template-columns: 1fr;
+  }
 
-/* =====================================================
-   NO SEARCH RESULTS
-   ===================================================== */
+  .brand {
+    font-size: 15px;
+  }
 
-.lesson-list:empty::after {
-  content: "🔎 No lessons found";
-
-  display: block;
-
-  padding: 25px;
-
-  text-align: center;
-
-  color: var(--muted);
-
-  background: var(--card);
-
-  border: 1px solid var(--border);
-
-  border-radius: 16px;
 }
