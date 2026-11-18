@@ -1,784 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#6c5ce7"
-  >
-
-  <meta
-    name="description"
-    content="PythonLearn - Learn Python from Zero to Coding"
-  >
-
-  <link
-    rel="manifest"
-    href="manifest.json"
-  >
-
-  <title>PythonLearn 3.4</title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6c5ce7">
+  <meta name="description" content="PythonLearn — a complete beginner-friendly Python learning platform with lessons, quizzes, projects and a real Python playground.">
+  <title>PythonLearn — Learn Python</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
 </head>
-
-
 <body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation">☰</button>
+      <a class="brand" href="#" onclick="navigate('home');return false;" aria-label="PythonLearn home">
+        <span class="brand-mark">🐍</span><span>Python<span class="brand-accent">Learn</span></span>
+        <small>4.0</small>
+      </a>
+      <div class="topbar-spacer"></div>
+      <div class="top-xp" title="Your experience"><span>⭐</span><b id="topXP">0 XP</b></div>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+      <button class="avatar-btn" id="profileShortcut" aria-label="Open profile">S</button>
+    </header>
 
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-label">LEARN</div>
+        <button class="nav-item active" data-page="home"><span>🏠</span> Home</button>
+        <button class="nav-item" data-page="dashboard"><span>📊</span> Dashboard</button>
+        <button class="nav-item" data-page="lessons"><span>📚</span> Lessons <em id="navLessonCount">0/20</em></button>
+        <button class="nav-item" data-page="quiz"><span>🧠</span> Quiz</button>
+        <button class="nav-item" data-page="playground"><span>💻</span> Playground</button>
+        <button class="nav-item" data-page="projects"><span>🚀</span> Projects</button>
+        <div class="sidebar-label sidebar-label-spaced">YOUR SPACE</div>
+        <button class="nav-item" data-page="achievements"><span>🏆</span> Achievements</button>
+        <button class="nav-item" data-page="profile"><span>👤</span> Profile & Settings</button>
+        <div class="sidebar-bottom">
+          <div class="sidebar-python">🐍</div>
+          <b>Keep learning!</b>
+          <p>Small steps make great programmers.</p>
+          <div class="sidebar-version">PYTHONLEARN 4.0</div>
+        </div>
+      </aside>
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+      <main class="main-content">
+        <!-- HOME -->
+        <section class="page active" id="page-home">
+          <div class="welcome-line"><span class="eyebrow">YOUR PYTHON JOURNEY STARTS HERE</span><span class="date-chip" id="todayLabel"></span></div>
+          <section class="hero">
+            <div class="hero-copy">
+              <span class="hero-pill">🐍 BEGINNER FRIENDLY • LEARN BY DOING</span>
+              <h1>Learn Python.<br><span>Build your future.</span></h1>
+              <p>Go from your first line of code to building real projects. Learn at your own pace, practise in the coding playground and track every milestone.</p>
+              <div class="hero-actions">
+                <button class="btn btn-white" onclick="navigate('dashboard')">Continue learning <span>→</span></button>
+                <button class="btn btn-glass" onclick="navigate('lessons')">Explore lessons</button>
+              </div>
+              <div class="hero-trust"><span>✓ 20 structured lessons</span><span>✓ Real Python runner</span><span>✓ Learn for free</span></div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <div class="python-planet">🐍</div>
+              <div class="floating-code code-one">print("Hello!")</div>
+              <div class="floating-code code-two">if ready:</div>
+              <div class="floating-code code-three">for i in range(5)</div>
+              <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+            </div>
+          </section>
 
-  <header class="topbar">
+          <div class="home-stats">
+            <article class="mini-stat"><span class="mini-stat-icon purple">📚</span><div><b id="homeLessons">0/20</b><small>Lessons completed</small></div></article>
+            <article class="mini-stat"><span class="mini-stat-icon yellow">⭐</span><div><b id="homeXP">0 XP</b><small>Total experience</small></div></article>
+            <article class="mini-stat"><span class="mini-stat-icon green">🔥</span><div><b id="homeStreak">0 days</b><small>Learning streak</small></div></article>
+            <article class="mini-stat"><span class="mini-stat-icon blue">🏆</span><div><b id="homeLevel">Level 1</b><small>Current level</small></div></article>
+          </div>
 
-    <button
-      class="icon-btn"
-      id="homeBtn"
-      onclick="showHome()"
-      aria-label="Home"
-    >
-      🏠
-    </button>
+          <div class="section-heading"><div><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h2>Jump back in</h2></div><button class="text-btn" onclick="navigate('lessons')">All lessons →</button></div>
+          <div class="continue-card" id="continueCard">
+            <div class="continue-icon">📘</div><div class="continue-copy"><b id="continueTitle">Python Basics</b><p id="continueDescription">Start with the foundations of Python.</p></div>
+            <button class="btn btn-primary" id="continueBtn" onclick="continueLearning()">Start lesson <span>→</span></button>
+          </div>
 
+          <div class="section-heading"><div><span class="eyebrow">EXPLORE THE PLATFORM</span><h2>Everything you need to learn</h2></div></div>
+          <div class="feature-grid">
+            <button class="feature-card" onclick="navigate('lessons')"><span class="feature-icon feature-purple">📚</span><b>Structured lessons</b><p>Clear explanations, examples and practice tasks.</p><span class="feature-link">Explore course →</span></button>
+            <button class="feature-card" onclick="navigate('playground')"><span class="feature-icon feature-green">💻</span><b>Python playground</b><p>Write and run actual Python code in your browser.</p><span class="feature-link">Start coding →</span></button>
+            <button class="feature-card" onclick="navigate('quiz')"><span class="feature-icon feature-orange">🧠</span><b>Knowledge quizzes</b><p>Check what you know and earn experience points.</p><span class="feature-link">Take a quiz →</span></button>
+            <button class="feature-card" onclick="navigate('projects')"><span class="feature-icon feature-blue">🚀</span><b>Mini projects</b><p>Turn concepts into useful beginner projects.</p><span class="feature-link">Build something →</span></button>
+          </div>
+        </section>
 
-    <div class="brand">
+        <!-- DASHBOARD -->
+        <section class="page" id="page-dashboard">
+          <div class="page-title-row"><div><span class="eyebrow">YOUR LEARNING OVERVIEW</span><h1>Dashboard</h1><p class="page-subtitle">See your progress and keep your momentum going.</p></div><button class="btn btn-primary" onclick="continueLearning()">▶ Continue learning</button></div>
+          <div class="dashboard-stats">
+            <article class="dashboard-stat"><span>📚</span><small>Completed lessons</small><b id="dashLessons">0 / 20</b><div class="stat-foot">Keep moving forward</div></article>
+            <article class="dashboard-stat"><span>⭐</span><small>Total XP</small><b id="dashXP">0</b><div class="stat-foot">Experience earned</div></article>
+            <article class="dashboard-stat"><span>🏅</span><small>Current level</small><b id="dashLevel">Level 1</b><div class="stat-foot" id="dashNextLevel">100 XP to next level</div></article>
+            <article class="dashboard-stat"><span>🔥</span><small>Learning streak</small><b id="dashStreak">0 days</b><div class="stat-foot">One learning day at a time</div></article>
+          </div>
+          <div class="content-grid">
+            <div class="panel progress-panel"><div class="panel-heading"><div><h3>Course progress</h3><p>Your overall Python course completion</p></div><b class="progress-percent" id="dashPercent">0%</b></div><div class="progress-track"><div class="progress-fill" id="dashProgressFill"></div></div><div class="progress-meta"><span id="dashProgressText">0 of 20 lessons completed</span><span>20 lessons</span></div></div>
+            <div class="panel level-panel"><div class="level-badge">🏆</div><div><span class="eyebrow">YOUR CURRENT RANK</span><h3 id="levelName">Python Beginner</h3><p id="levelHint">Complete lessons and quizzes to level up.</p></div></div>
+          </div>
+          <div class="section-heading"><div><span class="eyebrow">YOUR NEXT STEP</span><h2>Recommended lesson</h2></div><button class="text-btn" onclick="navigate('lessons')">View course →</button></div>
+          <div id="recommendedLesson" class="recommended-card"></div>
+          <div class="section-heading"><div><span class="eyebrow">RECENT ACTIVITY</span><h2>Learning history</h2></div></div>
+          <div class="panel activity-panel" id="activityList"></div>
+        </section>
 
-      🐍 PythonLearn
+        <!-- LESSONS -->
+        <section class="page" id="page-lessons">
+          <div class="page-title-row"><div><span class="eyebrow">THE PYTHON CURRICULUM</span><h1>Course lessons</h1><p class="page-subtitle">Twenty lessons from the basics to practical Python skills.</p></div><div class="course-completion" id="courseCompletion">0 / 20 done</div></div>
+          <div class="course-overview"><div class="course-overview-icon">🐍</div><div class="course-overview-copy"><b>Python from zero to confident</b><p>Work through each topic in order. Your progress is saved on this device.</p></div><div class="course-overview-progress"><b id="coursePercent">0%</b><div class="progress-track"><div class="progress-fill" id="courseProgressFill"></div></div></div></div>
+          <div class="lesson-toolbar"><div class="search-wrap"><span>⌕</span><input id="lessonSearch" type="search" placeholder="Search lessons or topics..." aria-label="Search lessons"></div><select id="lessonFilter" aria-label="Filter lessons"><option value="all">All lessons</option><option value="notdone">Not completed</option><option value="done">Completed</option></select></div>
+          <div id="lessonCatalog" class="lesson-catalog"></div>
+        </section>
 
-      <span>
-        3.4
-      </span>
+        <!-- LESSON DETAIL -->
+        <section class="page" id="page-lesson">
+          <button class="back-link" onclick="navigate('lessons')">← Back to course</button>
+          <div class="lesson-detail-header"><div><span class="eyebrow" id="lessonUnit">UNIT 1 • LESSON 1</span><h1 id="lessonDetailTitle">Python Basics</h1><p class="page-subtitle" id="lessonDetailDesc"></p></div><span class="lesson-detail-icon" id="lessonDetailIcon">🐍</span></div>
+          <div class="lesson-detail-layout"><article class="panel lesson-body"><div id="lessonBody"></div><div class="lesson-practice" id="lessonPractice"></div><div class="lesson-footer-actions"><button class="btn btn-outline" id="previousLessonBtn" onclick="moveLesson(-1)">← Previous</button><button class="btn btn-primary" id="markCompleteBtn" onclick="completeLesson()">Mark as complete ✓</button><button class="btn btn-outline" id="nextLessonBtn" onclick="moveLesson(1)">Next →</button></div></article><aside class="panel lesson-sidebar"><span class="eyebrow">COURSE CHECKLIST</span><h3>Your progress</h3><div class="progress-track"><div class="progress-fill" id="lessonSideProgress"></div></div><p class="side-progress-text" id="lessonSideText">0 of 20 completed</p><div id="lessonSideList" class="lesson-side-list"></div></aside></div>
+        </section>
 
+        <!-- QUIZ -->
+        <section class="page" id="page-quiz">
+          <div class="page-title-row"><div><span class="eyebrow">TEST YOUR KNOWLEDGE</span><h1>Python quiz</h1><p class="page-subtitle">Choose a topic or take a mixed quiz. Every question is a chance to learn.</p></div><div class="quiz-best">🏆 Best score <b id="quizBest">—</b></div></div>
+          <div id="quizStart" class="quiz-start-grid">
+            <button class="quiz-mode-card" onclick="startQuiz('basics')"><span>🌱</span><b>Python basics</b><small>Variables, data types and print</small><em>10 questions</em></button>
+            <button class="quiz-mode-card" onclick="startQuiz('control')"><span>🔀</span><b>Conditions & loops</b><small>If/else, for and while loops</small><em>10 questions</em></button>
+            <button class="quiz-mode-card" onclick="startQuiz('collections')"><span>📦</span><b>Collections & functions</b><small>Lists, dictionaries and functions</small><em>10 questions</em></button>
+            <button class="quiz-mode-card quiz-mode-featured" onclick="startQuiz('mixed')"><span>🏆</span><b>Mixed challenge</b><small>A little bit of everything</small><em>15 questions</em></button>
+          </div>
+          <div id="quizGame" class="quiz-game panel hidden"><div class="quiz-game-top"><span class="eyebrow" id="quizModeLabel">MIXED CHALLENGE</span><span id="quizCounter">1 / 15</span></div><div class="progress-track"><div class="progress-fill" id="quizProgressFill"></div></div><div class="quiz-question-area"><h2 id="quizQuestion">Question text</h2><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div></div><div class="quiz-game-bottom"><span id="quizScoreLive">Score: 0</span><button class="btn btn-primary" id="quizNextBtn" onclick="nextQuestion()" disabled>Next question →</button></div></div>
+          <div id="quizResult" class="quiz-result panel hidden"></div>
+        </section>
+
+        <!-- PLAYGROUND -->
+        <section class="page" id="page-playground">
+          <div class="page-title-row"><div><span class="eyebrow">EXPERIMENT • MAKE MISTAKES • LEARN</span><h1>Python playground</h1><p class="page-subtitle">A real Python interpreter runs in your browser using Pyodide.</p></div><span class="runtime-status" id="runtimeStatus"><i></i> Checking Python engine...</span></div>
+          <div class="playground-layout"><section class="panel editor-panel"><div class="editor-toolbar"><div><span class="editor-dot"></span><span class="editor-dot"></span><span class="editor-dot"></span><b>main.py</b></div><span class="editor-language">PYTHON 3</span></div><div class="editor-examples"><button onclick="loadExample('hello')">Hello</button><button onclick="loadExample('variables')">Variables</button><button onclick="loadExample('condition')">If / Else</button><button onclick="loadExample('loop')">Loop</button><button onclick="loadExample('list')">List</button><button onclick="loadExample('function')">Function</button></div><textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="Python code editor">print("Hello, Python!")
+name = "Learner"
+print("Welcome", name)</textarea><div class="editor-controls"><button class="btn btn-primary" id="runCodeBtn" onclick="runCode()">▶ Run code</button><button class="btn btn-outline" onclick="clearCode()">Clear</button><button class="btn btn-outline" onclick="resetCode()">Reset example</button><span class="shortcut-hint">Ctrl + Enter to run</span></div></section><section class="panel output-panel"><div class="output-heading"><b>Terminal output</b><button class="text-btn" onclick="clearOutput()">Clear output</button></div><pre id="codeOutput" class="code-output" aria-live="polite">Your program output will appear here.
+Click “Run code” to start.</pre><div class="output-note">ⓘ Code runs locally in your browser. First launch needs an internet connection to load the Python engine.</div></section></div>
+          <div class="playground-help panel"><div><span>💡</span><b>Try this</b><p>Change the name in the editor, then run the code again. Experiment with print(), variables and calculations.</p></div><button class="btn btn-outline" onclick="navigate('lessons')">Review lessons →</button></div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="page" id="page-projects">
+          <div class="page-title-row"><div><span class="eyebrow">LEARN BY BUILDING</span><h1>Mini projects</h1><p class="page-subtitle">Small, guided projects to help you use what you have learned.</p></div><span class="project-count">8 starter projects</span></div>
+          <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="page" id="page-achievements">
+          <div class="page-title-row"><div><span class="eyebrow">MILESTONES & MOTIVATION</span><h1>Achievements</h1><p class="page-subtitle">Every completed step is progress worth celebrating.</p></div><div class="achievement-tally" id="achievementTally">0 / 10 unlocked</div></div>
+          <div class="achievement-hero"><div class="achievement-hero-icon">🏆</div><div><h2>Keep collecting milestones</h2><p id="achievementMessage">Complete lessons, quizzes and projects to unlock badges.</p></div></div>
+          <div class="achievement-grid" id="achievementGrid"></div>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="page" id="page-profile">
+          <div><span class="eyebrow">MAKE IT YOURS</span><h1>Profile & settings</h1><p class="page-subtitle">Your learning identity and app preferences.</p></div>
+          <div class="profile-layout"><section class="panel profile-card"><div class="profile-avatar" id="profileAvatar">S</div><label for="profileName">Your display name</label><input id="profileName" class="form-input" maxlength="24" placeholder="Enter your name"><button class="btn btn-primary" onclick="saveProfile()">Save profile</button><p class="form-hint">Your profile is stored only on this device.</p></section><section class="panel settings-card"><h3>Preferences</h3><div class="setting-row"><div><b>Dark appearance</b><small>Use a darker colour theme.</small></div><button class="switch" id="settingsThemeBtn" onclick="toggleTheme()" aria-label="Toggle dark appearance"><span></span></button></div><div class="setting-row"><div><b>Learning reminders</b><small>Reminder preference (stored locally).</small></div><button class="switch" id="reminderSwitch" onclick="toggleReminder()" aria-label="Toggle reminder preference"><span></span></button></div><div class="setting-row"><div><b>Export your progress</b><small>Download a backup of your learning data.</small></div><button class="btn btn-outline btn-small" onclick="exportProgress()">Export JSON</button></div><div class="setting-row danger-setting"><div><b>Reset all progress</b><small>Clear lessons, XP, quiz records and activity.</small></div><button class="btn btn-danger btn-small" onclick="resetAllProgress()">Reset data</button></div></section></div>
+          <div class="privacy-note">🔒 <b>Your data stays on this device.</b> PythonLearn stores progress in your browser's local storage. Clearing browser data may erase it, so export a backup occasionally.</div>
+        </section>
+
+        <footer class="app-footer"><span>🐍 PythonLearn 4.0</span><span>Learn • Practise • Build</span><span>Made for curious minds ✦</span></footer>
+      </main>
     </div>
-
-
-    <button
-      class="icon-btn"
-      id="themeBtn"
-      onclick="toggleTheme()"
-      aria-label="Change Theme"
-    >
-      🌙
-    </button>
-
-  </header>
-
-
-
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
-
-  <main>
-
-
-    <!-- =====================================================
-         HOME
-         ===================================================== -->
-
-    <section
-      id="homePage"
-      class="page active"
-    >
-
-      <div class="hero">
-
-        <div class="hero-emoji">
-          🐍
-        </div>
-
-
-        <h1>
-          PythonLearn
-        </h1>
-
-
-        <p>
-          Learn Python from Zero to Coding 🚀
-        </p>
-
-
-        <button
-          class="primary-btn"
-          onclick="showDashboard()"
-        >
-          🚀 Start Learning
-        </button>
-
-
-        <!-- DOWNLOAD APK BUTTON -->
-
-        <br><br>
-
-        <a
-          class="primary-btn"
-          href="https://github.com/subrarajmajumder-ship-it/Python-Learn-for-students/releases/download/V3.4/PythonLearn.apk"
-          target="_blank"
-          rel="noopener"
-        >
-          📱 Download PythonLearn 3.4
-        </a>
-
-      </div>
-
-
-
-      <!-- FEATURES -->
-
-      <div class="feature-grid">
-
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            📚
-          </div>
-
-          <h3>
-            10 Lessons
-          </h3>
-
-          <p>
-            Learn Python step-by-step
-          </p>
-
-        </div>
-
-
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            🧠
-          </div>
-
-          <h3>
-            Quiz
-          </h3>
-
-          <p>
-            Test your Python knowledge
-          </p>
-
-        </div>
-
-
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            💻
-          </div>
-
-          <h3>
-            Playground
-          </h3>
-
-          <p>
-            Practice Python code
-          </p>
-
-        </div>
-
-
-
-        <div class="feature">
-
-          <div class="feature-icon">
-            🚀
-          </div>
-
-          <h3>
-            Projects
-          </h3>
-
-          <p>
-            Build Python projects
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         DASHBOARD
-         ===================================================== -->
-
-    <section
-      id="dashboardPage"
-      class="page"
-    >
-
-      <div class="page-head">
-
-        <div>
-
-          <p class="eyebrow">
-            PYTHONLEARN
-          </p>
-
-          <h2>
-            Dashboard
-          </h2>
-
-        </div>
-
-
-        <button
-          class="secondary-btn"
-          onclick="showHome()"
-        >
-          🏠 Home
-        </button>
-
-      </div>
-
-
-
-      <!-- STATISTICS -->
-
-      <div class="stats-grid">
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            📚
-          </div>
-
-          <strong id="lessonCount">
-            0 / 10
-          </strong>
-
-          <small>
-            Lessons
-          </small>
-
-        </div>
-
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            ⭐
-          </div>
-
-          <strong id="xpCount">
-            0 XP
-          </strong>
-
-          <small>
-            Experience
-          </small>
-
-        </div>
-
-
-
-        <div class="stat-card">
-
-          <div class="stat-icon">
-            🏆
-          </div>
-
-          <strong id="levelCount">
-            Level 1
-          </strong>
-
-          <small>
-            Your Level
-          </small>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- PROGRESS -->
-
-      <div class="progress-card">
-
-        <div class="progress-title">
-
-          <span>
-            Course Progress
-          </span>
-
-          <b id="progressText">
-            0 / 10 Lessons Completed
-          </b>
-
-        </div>
-
-
-        <div class="progress-track">
-
-          <div
-            id="progressFill"
-            class="progress-fill"
-          >
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- SEARCH -->
-
-      <input
-        id="searchInput"
-        class="search-box"
-        type="search"
-        placeholder="🔎 Search lessons..."
-        oninput="searchLessons()"
-      >
-
-
-
-      <!-- QUICK NAVIGATION -->
-
-      <div class="quick-nav">
-
-        <button
-          onclick="showQuiz()"
-        >
-          🧠 Quiz
-        </button>
-
-
-        <button
-          onclick="showPlayground()"
-        >
-          💻 Playground
-        </button>
-
-
-        <button
-          onclick="showProjects()"
-        >
-          🚀 Projects
-        </button>
-
-
-        <button
-          onclick="resetProgress()"
-        >
-          🔄 Reset Progress
-        </button>
-
-      </div>
-
-
-
-      <h2 class="section-title">
-        📚 Python Lessons
-      </h2>
-
-
-      <div
-        id="lessonList"
-        class="lesson-list"
-      >
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         LESSON PAGE
-         ===================================================== -->
-
-    <section
-      id="lessonPage"
-      class="page"
-    >
-
-      <button
-        class="back-btn"
-        onclick="showDashboard()"
-      >
-        ← Dashboard
-      </button>
-
-
-      <div class="lesson-detail">
-
-        <p
-          id="detailNumber"
-          class="eyebrow"
-        >
-          LESSON 1
-        </p>
-
-
-        <h2 id="detailTitle">
-          Python Basics
-        </h2>
-
-
-        <p
-          id="detailDescription"
-          class="muted"
-        >
-        </p>
-
-
-        <div
-          id="detailContent"
-          class="lesson-content"
-        >
-        </div>
-
-
-        <div class="lesson-actions">
-
-          <button
-            class="secondary-btn"
-            onclick="previousLesson()"
-          >
-            ← Previous
-          </button>
-
-
-          <button
-            id="completeBtn"
-            class="primary-btn"
-            onclick="completeCurrentLesson()"
-          >
-            Complete Lesson ✓
-          </button>
-
-
-          <button
-            class="secondary-btn"
-            onclick="nextLesson()"
-          >
-            Next →
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         QUIZ PAGE
-         ===================================================== -->
-
-    <section
-      id="quizPage"
-      class="page"
-    >
-
-      <button
-        class="back-btn"
-        onclick="showDashboard()"
-      >
-        ← Dashboard
-      </button>
-
-
-      <div class="quiz-card">
-
-        <p class="eyebrow">
-          KNOWLEDGE CHECK
-        </p>
-
-
-        <h2>
-          🧠 Python Quiz
-        </h2>
-
-
-        <div
-          id="quizProgress"
-          class="quiz-progress"
-        >
-          Question 1 / 5
-        </div>
-
-
-        <div
-          id="quizContent"
-        >
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PLAYGROUND PAGE
-         ===================================================== -->
-
-    <section
-      id="playgroundPage"
-      class="page"
-    >
-
-      <button
-        class="back-btn"
-        onclick="showDashboard()"
-      >
-        ← Dashboard
-      </button>
-
-
-      <div class="playground-card">
-
-        <p class="eyebrow">
-          CODING PLAYGROUND
-        </p>
-
-
-        <h2>
-          💻 Python Playground
-        </h2>
-
-
-        <p class="muted">
-          Write and practice beginner Python code.
-        </p>
-
-
-
-        <!-- EXAMPLES -->
-
-        <div class="example-section">
-
-          <h3>
-            Quick Examples
-          </h3>
-
-
-          <div class="example-row">
-
-            <button
-              onclick="loadExample('hello')"
-            >
-              👋 Hello World
-            </button>
-
-
-            <button
-              onclick="loadExample('variables')"
-            >
-              📦 Variables
-            </button>
-
-
-            <button
-              onclick="loadExample('math')"
-            >
-              🧮 Calculator
-            </button>
-
-
-            <button
-              onclick="loadExample('loop')"
-            >
-              🔁 Loop
-            </button>
-
-
-            <button
-              onclick="loadExample('list')"
-            >
-              📋 List
-            </button>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- CODE EDITOR -->
-
-        <label
-          class="editor-label"
-          for="codeEditor"
-        >
-          Python Code
-        </label>
-
-
-        <textarea
-          id="codeEditor"
-          spellcheck="false"
-          autocapitalize="off"
-          autocomplete="off"
-          autocorrect="off"
-        >print("Hello, Python!")</textarea>
-
-
-
-        <div class="editor-actions">
-
-          <button
-            class="primary-btn"
-            onclick="runCode()"
-          >
-            ▶ Run Code
-          </button>
-
-
-          <button
-            class="secondary-btn"
-            onclick="clearCode()"
-          >
-            🧹 Clear
-          </button>
-
-        </div>
-
-
-
-        <label class="editor-label">
-          Output
-        </label>
-
-
-        <pre
-          id="codeOutput"
-          class="code-output"
-        >Click "Run Code" to see output.</pre>
-
-
-
-        <div class="tip-box">
-
-          💡 <b>Tip:</b>
-
-          Try simple commands like:
-
-          <br><br>
-
-          <code>
-            print("Hello")
-          </code>
-
-          <br>
-
-          <code>
-            age = 16
-          </code>
-
-          <br>
-
-          <code>
-            print(age)
-          </code>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROJECTS PAGE
-         ===================================================== -->
-
-    <section
-      id="projectsPage"
-      class="page"
-    >
-
-      <button
-        class="back-btn"
-        onclick="showDashboard()"
-      >
-        ← Dashboard
-      </button>
-
-
-      <div class="projects-card">
-
-        <p class="eyebrow">
-          BUILD SOMETHING
-        </p>
-
-
-        <h2>
-          🚀 Python Projects
-        </h2>
-
-
-        <p class="muted">
-          Practice your Python skills by building small projects.
-        </p>
-
-
-        <div
-          id="projectList"
-          class="project-list"
-        >
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
-  <footer>
-
-    <p>
-      🐍 PythonLearn 3.4
-    </p>
-
-    <p>
-      Learn • Practice • Build 🚀
-    </p>
-
-  </footer>
-
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-
+  </div>
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
   <script src="script.js"></script>
-
-
 </body>
-
 </html>
