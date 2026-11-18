@@ -1,13 +1,14 @@
 {
-  "name": "PythonLearn",
+  "id": "/Python-Learn-for-students/",
+  "name": "PythonLearn 4.0",
   "short_name": "PythonLearn",
-  "description": "Learn Python from Zero to Coding with lessons, quizzes, practice and projects.",
-  "start_url": "./",
-  "scope": "./",
+  "description": "Learn Python from Zero to Coding",
+  "start_url": "/Python-Learn-for-students/",
+  "scope": "/Python-Learn-for-students/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#6c5ce7",
   "orientation": "portrait",
+  "background_color": "#101820",
+  "theme_color": "#6c5ce7",
   "icons": [
     {
       "src": "icon-192.png",
